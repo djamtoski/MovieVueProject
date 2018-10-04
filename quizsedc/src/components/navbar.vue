@@ -1,22 +1,26 @@
 <template>
 <nav>
     <ul>
-        <li><a>Home</a></li>
-        <li><a>About</a>
-        <ul>
-            <li><a>Our Team</a></li>
-            <li><a>SEDC</a></li>
-        </ul>
+        <li v-for="item in navItems" :key="item.name">
+            <router-link :to="item.path">{{item.name}}</router-link>
         </li>
-        <li><a>Quiz</a></li>
-        <li><a>Contact</a></li>
     </ul>
 </nav>
 </template>
 
 <script>
 export default {
+data(){
+    return {
+        navItems : [ 
+            { path : '/',name : 'Home'},
+            { path : '/about',name : 'About'},
+            { path : '/quiz',name : 'Quiz'},
+            { path : '/contact',name : 'Contact'},
+        ],
 
+    }
+}
 }
 </script>
 
