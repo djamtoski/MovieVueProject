@@ -15,7 +15,7 @@ data(){
         navItems : [ 
             { path : '/',name : 'Home'},
             { path : '/about',name : 'About'},
-            { path : '/quiz',name : 'Quiz'},
+            { path : '/quizstart',name : 'Quizstart'},
             { path : '/contact',name : 'Contact'},
         ],
 
