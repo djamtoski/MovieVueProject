@@ -21,7 +21,7 @@ components : {
 
 <style>
 body {
-    background: url('./assets/download.png') no-repeat;
+    background: url('./assets/movies.jpg') no-repeat;
     background-size: 1920px 1080px;
     font-family: Arial;
     color: white;

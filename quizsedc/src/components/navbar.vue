@@ -1,10 +1,25 @@
 <template>
-<nav>
-    <ul>
-        <li v-for="item in navItems" :key="item.name">
-            <router-link :to="item.path">{{item.name}}</router-link>
-        </li>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <router-link to="/" class="navbar-brand">MMDB</router-link>
+    </div>
+    <ul class="nav navbar-nav">
+        <router-link v-for="item in navItems" :key="item.name" class="navbar-brand" :to="item.path">{{item.name}}</router-link>
     </ul>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button class="btn btn-info">Search</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+      <li><router-link to="/signup"><span class="glyphicon glyphicon-user"></span>Sign Up</router-link></li>
+      <li><router-link to="/login"><span class="glyphicon glyphicon-log-in"></span>Login</router-link></li>
+    </ul>
+  </div>
 </nav>
 </template>
 
@@ -13,10 +28,8 @@ export default {
 data(){
     return {
         navItems : [ 
-            { path : '/',name : 'Home'},
             { path : '/about',name : 'About'},
-            { path : '/quizstart',name : 'Quizstart'},
-            { path : '/contact',name : 'Contact'},
+            { path : '/adminpanel',name : 'AdminPanel'},
         ],
 
     }
@@ -24,47 +37,6 @@ data(){
 }
 </script>
 
-<style>
-nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background: rgba (0,0,0,0.6);
-    padding: 0 ppx;
-    box-sizing: border-box;
-}
+<style scoped>
 
-ul {
-    margin : 0px;
-    padding: 0px;
-    list-style: none;
-}
-ul li {
-    float: left;
-    width: 200px;
-    height: 40px;
-    background-color: black;
-    opacity: .8;
-    line-height: 40px;
-    text-align: center;
-    font-size: 20px;
-}
-ul li a {
-    text-decoration: none;
-    color : white;
-    display: block;
-}
-ul li a:hover {
-    background: rgb(0, 128, 128);
-    cursor :default
-}
-ul li ul li {
-    display: none;
-
-}
-ul li:hover ul li {
-    display: block;
-}
 </style>
